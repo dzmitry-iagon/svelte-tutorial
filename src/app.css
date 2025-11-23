@@ -1,99 +1,15 @@
-/* Reset and base styles  */
-body {
-  font-family: 'Montserrat', sans-serif;
+@import "tailwindcss";
+
+
+@theme {
+  --color-brand-pink-light:  #EB50AD;
+  --color-brand-pink-dark: #4E2A50;
+  --color-title-light: #E6EBF5;
+  --color-title-dark: #120E1A;
+  --color-description-dark: #9D94AB;
+  --color-description-light: #716880;
+  --color-text-white: #F9F9FB;
+  --color-text-pink: #FF59BD;
+  --color-gradient-secondary: #6E3A70;
+  --color-block-background: rgba(230, 235, 245, 0.04); 
 }
-
-* {
-	padding: 0px;
-	margin: 0px;
-	border: none;
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
-
-/* Links */
-
-a, a:link, a:visited  {
-    text-decoration: none;
-}
-
-a:hover  {
-    text-decoration: none;
-}
-
-/* Common */
-
-aside, nav, footer, header, section, main {
-	display: block;
-}
-
-h1, h2, h3, h4, h5, h6, p {
-    font-size: inherit;
-	font-weight: inherit;
-}
-
-ul, ul li {
-	list-style: none;
-}
-
-img {
-	vertical-align: top;
-}
-
-img, svg {
-	max-width: 100%;
-	height: auto;
-}
-
-address {
-  font-style: normal;
-}
-
-/* Form */
-
-input, textarea, button, select {
-	font-family: inherit;
-    font-size: inherit;
-    color: inherit;
-    background-color: transparent;
-}
-
-input::-ms-clear {
-	display: none;
-}
-
-button, input[type="submit"] {
-    display: inline-block;
-    box-shadow: none;
-    background-color: transparent;
-    background: none;
-    cursor: pointer;
-}
-
-input:focus, input:active,
-button:focus, button:active {
-    outline: none;
-}
-
-button::-moz-focus-inner {
-	padding: 0;
-	border: 0;
-}
-
-label {
-	cursor: pointer;
-}
-
-legend {
-	display: block;
-}
-
-input[type='file'] {
-	max-width: 100%;
-}
-

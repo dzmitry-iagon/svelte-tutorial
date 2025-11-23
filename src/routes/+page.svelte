@@ -1,10 +1,12 @@
 <script lang="ts">
 	import Todo from '$lib/Todo.svelte';
-
 	import AddTodo from '$lib/addTodo.svelte';
-	import WelcomeBlock from '../components/WelcomeBlock.svelte';
+	import LauncherBlock from '../components/LauncherBlock.svelte';
+	import { LAUNCHER_CONST } from '../const/index.ts';
 	import { todos, removeTodo } from '../store/todos.svelte.ts';
 	import type { ITodo } from '../store/todos.svelte.ts';
+
+	const { LAUNCHER_STEPS_DATA } = LAUNCHER_CONST;
 
 	async function getTodos() {
 		const resp = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=10');
@@ -23,6 +25,7 @@
 	{:then}
 		{#if todos.length === 0}
 			<p>Empty!</p>
+			Choose A Tier
 		{:else}
 			<div class="todoList">
 				{#each todos as todo (todo.id)}
@@ -34,7 +37,7 @@
 		<p>Something went wrong: {error.message}</p>
 	{/await}
 
-	<WelcomeBlock />
+	<LauncherBlock {...LAUNCHER_STEPS_DATA[1]} />
 </div>
 
 <style>
